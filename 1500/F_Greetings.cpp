@@ -29,25 +29,6 @@ void solve() {
         ans+=abs(distance(it,it2));
     }
     cout<<ans<<endl;
-
-    // int cnt=0;
-    // rep(i,0,n) {
-    //     for(int j=i+1;j<n;j++) {
-    //         //will i and j meet?
-    //         //if j starts behind i
-    //         if (a[j] < a[i]) {
-    //             if (b[i]-a[i] < b[j]-a[j]) {
-    //                 if (b[j] >= b[i]) {cnt++;}
-    //             }
-    //         } else {
-    //             //i starts behind j
-    //             if (b[j]-a[j] < b[i]-a[i]) {
-    //                 if (b[i] >= b[j]) {cnt++;}
-    //             }
-    //         }
-    //     }
-    // }
-    // cout<<cnt<<endl;
 }
 int main() {
     //add quotes incase input output file
