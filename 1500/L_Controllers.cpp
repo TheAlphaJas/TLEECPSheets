@@ -11,24 +11,33 @@ using namespace std;
 bool sortbysec(const pair<ll,ll> &a,const pair<ll,ll> &b) { return (a.second < b.second); }
 
 void solve() {
-    int n;
+    ll int n;
     cin>>n;
-    int a[n], b[n];
-    rep(i,0,n) {cin>>a[i]>>b[i];}
-    vector<pair<int,int>> v;
-    multiset<int> S;
-    rep(i,0,n) {v.pb({b[i]-a[i], b[i]}); S.insert(b[i]);}
-    int ans=0;
-    sort(v.begin(),v.end());
-    for(auto x:v) {
-        int start = x.second - x.first;
-        int end = x.second;
-        auto it = S.lower_bound(start);
-        auto it2 = S.upper_bound(end);
-        it2--;
-        ans+=abs(distance(it,it2));
+    char x;
+    ll int cp=0, cn=0;
+    rep(i,0,n) {cin>>x; if (x=='+'){cp++;} else {cn++;}}
+    ll int q; cin>>q;
+    ll int a,b;
+    rep(i,0,q) {
+        cin>>a>>b;
+        if (a==b) {
+            if (cp==cn) {cout<<"YES\n";} else {cout<<"NO\n";}
+        } else {
+        ll int g = __gcd(a,b);
+        int ar = a, br=b;
+        a=a/g; b=b/g;
+        ll int n1 = abs((cp-cn)/(a-b));
+        bool fl=0;
+        if (cp - n1*a == cn - n1*b) {
+            if (cp - n1*a >= 0) {fl=1;}
+        }
+        if (cn - n1*a == cp - n1*b) {
+            if (cn - n1*a >= 0) {fl=1;}
+        }
+
+        if (fl) {cout<<"YES\n";} else {cout<<"NO\n";}
+        }
     }
-    cout<<ans<<endl;
 }
 int main() {
     //add quotes incase input output file
@@ -37,7 +46,7 @@ int main() {
     ios_base::sync_with_stdio(0);
     cin.tie(0); cout.tie(0);
     int tc = 1;
-    cin >> tc;
+    // cin >> tc;
     for (int t = 1; t <= tc; t++) {
         solve();
     }

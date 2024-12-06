@@ -13,22 +13,15 @@ bool sortbysec(const pair<ll,ll> &a,const pair<ll,ll> &b) { return (a.second < b
 void solve() {
     int n;
     cin>>n;
-    int a[n], b[n];
-    rep(i,0,n) {cin>>a[i]>>b[i];}
-    vector<pair<int,int>> v;
-    multiset<int> S;
-    rep(i,0,n) {v.pb({b[i]-a[i], b[i]}); S.insert(b[i]);}
-    int ans=0;
-    sort(v.begin(),v.end());
-    for(auto x:v) {
-        int start = x.second - x.first;
-        int end = x.second;
-        auto it = S.lower_bound(start);
-        auto it2 = S.upper_bound(end);
-        it2--;
-        ans+=abs(distance(it,it2));
+    int a[n];
+    lli s=0;
+    rep(i,0,n) {cin>>a[i]; s+=a[i];}
+    sort(a,a+n);
+    if (s%2==0) {
+        if (s-a[n-1] < a[n-1]) {cout<<"NO\n";} else {cout<<"YES\n";}
+    }   else {
+        cout<<"NO\n";
     }
-    cout<<ans<<endl;
 }
 int main() {
     //add quotes incase input output file
@@ -37,7 +30,7 @@ int main() {
     ios_base::sync_with_stdio(0);
     cin.tie(0); cout.tie(0);
     int tc = 1;
-    cin >> tc;
+    // cin >> tc;
     for (int t = 1; t <= tc; t++) {
         solve();
     }
