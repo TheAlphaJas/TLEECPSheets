@@ -3,5 +3,12 @@ This repository contains my solutions to the problems in the [TLE Eliminators CP
 
 CP -> Competitive Programming
 
-# About Me
-Kindly refer to my [personal website](https://thealphajas.github.io/vcard-website-jas/).
+Looking for other solutions? Check out my other repos!
+
+Looking for some interesting probability puzzles? Check out my side-project [JXTech-Ques](https://jxtech-s.github.io/problems/)!
+
+---
+
+Cheers!
+
+Jas
